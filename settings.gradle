@@ -1,0 +1,6 @@
+rootProject.name = 'glitr-examples'
+include 'todo'
+include 'todo-relay'
+include 'hello-world'
+include 'todo-rest'
+

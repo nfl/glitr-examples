@@ -1,0 +1,16 @@
+group 'com.nfl.glitr'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url  "http://dl.bintray.com/andimarek/graphql-java" }
+}
+
+dependencies {
+    compile("com.nfl.dm.shield:glitr:1.0.0-RC")
+    compile('com.graphql-java:graphql-java:2.1.0')
+    testCompile('junit:junit:4.11')
+}
