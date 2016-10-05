@@ -5,6 +5,8 @@ import com.nfl.glitr.domain.Todo;
 import com.nfl.glitr.domain.User;
 import graphql.schema.DataFetchingEnvironment;
 
+import java.util.Arrays;
+
 @GlitrDescription("Where it all begins.")
 public class Root {
 
@@ -13,6 +15,12 @@ public class Root {
     }
 
     public User getUser(DataFetchingEnvironment env) {
-        return new User().setId("first-user");
+        return new User()
+                .setId("first-user")
+                .setTodoList(Arrays.asList(
+                        new Todo().setId("first-todo"),
+                        new Todo().setId("second-todo"),
+                        new Todo().setId("third-todo")
+                ));
     }
 }

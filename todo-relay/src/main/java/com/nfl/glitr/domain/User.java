@@ -1,6 +1,7 @@
 package com.nfl.glitr.domain;
 
 import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
+import com.nfl.glitr.graphql.domain.graph.annotation.GlitrForwardPagingArguments;
 
 import java.util.List;
 
@@ -8,6 +9,7 @@ import java.util.List;
 public class User {
 
     private String id;
+    @GlitrForwardPagingArguments
     private List<Todo> todoList;
 
 
