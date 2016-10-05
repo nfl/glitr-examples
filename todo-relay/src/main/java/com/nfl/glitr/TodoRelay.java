@@ -1,12 +1,10 @@
 package com.nfl.glitr;
 
-import com.nfl.dm.shield.graphql.Glitr;
-import com.nfl.dm.shield.graphql.GlitrBuilder;
+import com.nfl.glitr.graphql.Glitr;
+import com.nfl.glitr.graphql.GlitrBuilder;
 import com.nfl.glitr.graphql.Mutation;
 import com.nfl.glitr.graphql.Root;
 import graphql.GraphQL;
-
-import java.util.Map;
 
 public class TodoRelay {
 

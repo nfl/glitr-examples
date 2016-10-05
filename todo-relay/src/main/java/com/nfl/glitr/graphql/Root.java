@@ -1,6 +1,6 @@
 package com.nfl.glitr.graphql;
 
-import com.nfl.dm.shield.graphql.domain.graph.annotation.GlitrDescription;
+import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
 import com.nfl.glitr.domain.Todo;
 import com.nfl.glitr.domain.User;
 import graphql.schema.DataFetchingEnvironment;

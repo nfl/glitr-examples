@@ -1,8 +1,8 @@
 package com.nfl.glitr;
 
-import com.nfl.dm.shield.graphql.Glitr;
-import com.nfl.dm.shield.graphql.GlitrBuilder;
-import com.nfl.dm.shield.graphql.domain.graph.annotation.GlitrDescription;
+import com.nfl.glitr.graphql.Glitr;
+import com.nfl.glitr.graphql.GlitrBuilder;
+import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
 import graphql.GraphQL;
 import graphql.schema.DataFetchingEnvironment;
 

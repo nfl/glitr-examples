@@ -4,9 +4,9 @@ import com.nfl.glitr.domain.Todo;
 import com.nfl.glitr.domain.User;
 import com.nfl.glitr.graphql.input.CreateTodoInput;
 import com.nfl.glitr.graphql.input.CreateUserInput;
-import com.nfl.dm.shield.graphql.domain.graph.annotation.GlitrArgument;
-import com.nfl.dm.shield.graphql.domain.graph.annotation.GlitrDescription;
-import com.nfl.dm.shield.util.JsonUtils;
+import com.nfl.glitr.graphql.domain.graph.annotation.GlitrArgument;
+import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
+import com.nfl.glitr.util.JsonUtils;
 import graphql.schema.DataFetchingEnvironment;
 
 import java.util.Map;

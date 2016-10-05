@@ -1,6 +1,6 @@
 package com.nfl.glitr.domain;
 
-import com.nfl.dm.shield.graphql.domain.graph.annotation.GlitrDescription;
+import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
 
 @GlitrDescription("A User Object")
 public class User {
