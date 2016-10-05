@@ -21,10 +21,13 @@ public class Mutation {
         Map inputMap = env.getArgument("input");
         CreateUserInput input = JsonUtils.convertValue(inputMap, CreateUserInput.class);
 
-        User user = new User(input.getUser().getId());
+        User user = new User()
+                .setId(input.getUser().getId())
+                .setTodoList(input.getUser().getTodoList());
+
         CreateUserPayload payload = new CreateUserPayload();
-        payload.setUser(user);
         payload.setClientMutationId(input.getClientMutationId());
+        payload.setUser(user);
 
         return payload;
     }
@@ -34,14 +37,15 @@ public class Mutation {
         Map inputMap = env.getArgument("input");
         CreateTodoInput input = JsonUtils.convertValue(inputMap, CreateTodoInput.class);
 
-        Todo todo = new Todo(input.getTodo().getId())
+        Todo todo = new Todo()
+                .setId(input.getTodo().getId())
                 .setText(input.getTodo().getText())
                 .setComplete(input.getTodo().isComplete());
+
         CreateTodoPayload payload = new CreateTodoPayload();
-        payload.setTodo(todo);
         payload.setClientMutationId(input.getClientMutationId());
+        payload.setTodo(todo);
 
         return payload;
-
     }
 }

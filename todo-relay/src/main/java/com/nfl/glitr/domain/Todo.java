@@ -8,10 +8,8 @@ public class Todo {
     private String id;
     private String text;
     private boolean complete;
+    private User user;
 
-    public Todo(String id) {
-        this.id = id;
-    }
 
     public String getId() {
         return id;
@@ -37,6 +35,15 @@ public class Todo {
 
     public Todo setComplete(boolean complete) {
         this.complete = complete;
+        return this;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Todo setUser(User user) {
+        this.user = user;
         return this;
     }
 }

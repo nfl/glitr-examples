@@ -20,6 +20,8 @@ public class CreateTodoInput extends RelayMutationType {
         private String id;
         private String text;
         private boolean complete;
+        private String userId;
+
 
         public String getId() {
             return id;
@@ -45,6 +47,15 @@ public class CreateTodoInput extends RelayMutationType {
 
         public TodoMutation setComplete(boolean complete) {
             this.complete = complete;
+            return this;
+        }
+
+        public String getUserId() {
+            return userId;
+        }
+
+        public TodoMutation setUserId(String userId) {
+            this.userId = userId;
             return this;
         }
     }

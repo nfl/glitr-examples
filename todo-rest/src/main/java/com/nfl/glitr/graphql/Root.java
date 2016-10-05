@@ -9,10 +9,10 @@ import graphql.schema.DataFetchingEnvironment;
 public class Root {
 
     public Todo getTodo(DataFetchingEnvironment env) {
-        return new Todo("first-todo");
+        return new Todo().setId("first-todo");
     }
 
     public User getUser(DataFetchingEnvironment env) {
-        return new User("first-user");
+        return new User().setId("first-user");
     }
 }

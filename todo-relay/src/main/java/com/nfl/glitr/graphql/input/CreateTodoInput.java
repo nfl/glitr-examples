@@ -4,48 +4,45 @@ import com.nfl.glitr.graphql.registry.mutation.RelayMutationType;
 
 public class CreateTodoInput extends RelayMutationType {
 
-    private TodoMutation todoMutation;
+    private String id;
+    private String text;
+    private boolean complete;
+    private String userId;
 
-    public TodoMutation getTodo() {
-        return todoMutation;
+
+    public String getId() {
+        return id;
     }
 
-    public CreateTodoInput setTodo(TodoMutation todoMutation) {
-        this.todoMutation = todoMutation;
+    public CreateTodoInput setId(String id) {
+        this.id = id;
         return this;
     }
 
-    public static class TodoMutation {
+    public String getText() {
+        return text;
+    }
 
-        private String id;
-        private String text;
-        private boolean complete;
+    public CreateTodoInput setText(String text) {
+        this.text = text;
+        return this;
+    }
 
-        public String getId() {
-            return id;
-        }
+    public boolean isComplete() {
+        return complete;
+    }
 
-        public TodoMutation setId(String id) {
-            this.id = id;
-            return this;
-        }
+    public CreateTodoInput setComplete(boolean complete) {
+        this.complete = complete;
+        return this;
+    }
 
-        public String getText() {
-            return text;
-        }
+    public String getUserId() {
+        return userId;
+    }
 
-        public TodoMutation setText(String text) {
-            this.text = text;
-            return this;
-        }
-
-        public boolean isComplete() {
-            return complete;
-        }
-
-        public TodoMutation setComplete(boolean complete) {
-            this.complete = complete;
-            return this;
-        }
+    public CreateTodoInput setUserId(String userId) {
+        this.userId = userId;
+        return this;
     }
 }

@@ -18,15 +18,18 @@ public class Mutation {
     public User getCreateUser(DataFetchingEnvironment env) {
         Map inputMap = env.getArgument("input");
         CreateUserInput input = JsonUtils.convertValue(inputMap, CreateUserInput.class);
-        return new User(input.getUser().getId());
+        return new User()
+                .setId(input.getId())
+                .setTodoList(input.getTodoList());
     }
 
     @GlitrArgument(name = "input", type = CreateTodoInput.class, nullable = false)
     public Todo getCreateTodo(DataFetchingEnvironment env) {
         Map inputMap = env.getArgument("input");
         CreateTodoInput input = JsonUtils.convertValue(inputMap, CreateTodoInput.class);
-        return new Todo(input.getTodo().getId())
-                .setText(input.getTodo().getText())
-                .setComplete(input.getTodo().isComplete());
+        return new Todo()
+                .setId(input.getId())
+                .setText(input.getText())
+                .setComplete(input.isComplete());
     }
 }

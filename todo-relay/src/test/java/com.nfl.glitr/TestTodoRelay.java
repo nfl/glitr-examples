@@ -44,7 +44,7 @@ public class TestTodoRelay {
 
     @Test
     public void testMutationUser() {
-        Map result = (Map) graphQL.execute("mutation { createUser(input: { clientMutationId:\"test-user\" user: { id:\"new-user\" } }) { clientMutationId user { id } } }").getData();
+        Map result = (Map) graphQL.execute("mutation { createUser(input: { clientMutationId:\"test-user\" id:\"new-user\" }) { clientMutationId user { id } } }").getData();
         LinkedHashMap createUser = (LinkedHashMap) result.get("createUser");
         assertTrue( createUser.get("clientMutationId").equals("test-user"));
 
@@ -54,7 +54,7 @@ public class TestTodoRelay {
 
     @Test
     public void testMutationTodo() {
-        Map result = (Map) graphQL.execute("mutation { createTodo(input: { clientMutationId:\"test-todo\" todo: { id:\"new-todo\" text:\"new text\" complete:true } }) { clientMutationId todo { id text complete } } }").getData();
+        Map result = (Map) graphQL.execute("mutation { createTodo(input: { clientMutationId:\"test-todo\" id:\"new-todo\" text:\"new text\" complete:true }) { clientMutationId todo { id text complete } } }").getData();
         LinkedHashMap createTodo = (LinkedHashMap) result.get("createTodo");
         assertTrue(createTodo.get("clientMutationId").equals("test-todo"));
 

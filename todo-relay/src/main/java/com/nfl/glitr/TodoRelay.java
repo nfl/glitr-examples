@@ -18,7 +18,7 @@ public class TodoRelay {
 
         System.out.println(graphQL.execute("query { user { id } }").getData());
         System.out.println(graphQL.execute("query { todo { id text complete } }").getData());
-        System.out.println(graphQL.execute("mutation { createUser(input: { clientMutationId:\"test-user\" user: { id:\"new-user\" } }) { clientMutationId user { id } } }").getData());
-        System.out.println(graphQL.execute("mutation { createTodo(input: { clientMutationId:\"test-todo\" todo: { id:\"new-todo\" text:\"new text\" complete:true } }) { clientMutationId todo { id text complete } } }").getData());
+        System.out.println(graphQL.execute("mutation { createUser(input: { clientMutationId:\"test-user\" id:\"new-user\" }) { clientMutationId user { id } } }").getData());
+        System.out.println(graphQL.execute("mutation { createTodo(input: { clientMutationId:\"test-todo\" id:\"new-todo\" text:\"new text\" complete:true }) { clientMutationId todo { id text complete } } }").getData());
     }
 }

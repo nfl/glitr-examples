@@ -1,31 +1,31 @@
 package com.nfl.glitr.graphql.input;
 
+import com.nfl.glitr.domain.Todo;
 import com.nfl.glitr.graphql.registry.mutation.RelayMutationType;
+
+import java.util.List;
 
 public class CreateUserInput extends RelayMutationType {
 
-    private UserMutation userMutation;
+    private String id;
+    private List<Todo> todoList;
 
-    public UserMutation getUser() {
-        return userMutation;
+
+    public String getId() {
+        return id;
     }
 
-    public CreateUserInput setUser(UserMutation userMutation) {
-        this.userMutation = userMutation;
+    public CreateUserInput setId(String id) {
+        this.id = id;
         return this;
     }
 
-    public static class UserMutation {
+    public List<Todo> getTodoList() {
+        return todoList;
+    }
 
-        private String id;
-
-        public String getId() {
-            return id;
-        }
-
-        public UserMutation setId(String id) {
-            this.id = id;
-            return this;
-        }
+    public CreateUserInput setTodoList(List<Todo> todoList) {
+        this.todoList = todoList;
+        return this;
     }
 }
