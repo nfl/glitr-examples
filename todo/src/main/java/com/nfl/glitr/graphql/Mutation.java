@@ -1,11 +1,11 @@
 package com.nfl.glitr.graphql;
 
+import com.nfl.glitr.annotation.GlitrArgument;
+import com.nfl.glitr.annotation.GlitrDescription;
 import com.nfl.glitr.domain.Todo;
 import com.nfl.glitr.domain.User;
 import com.nfl.glitr.graphql.input.CreateTodoInput;
 import com.nfl.glitr.graphql.input.CreateUserInput;
-import com.nfl.glitr.graphql.domain.graph.annotation.GlitrArgument;
-import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
 import com.nfl.glitr.util.JsonUtils;
 import graphql.schema.DataFetchingEnvironment;
 

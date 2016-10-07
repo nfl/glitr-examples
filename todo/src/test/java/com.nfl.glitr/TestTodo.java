@@ -1,7 +1,5 @@
 package com.nfl.glitr;
 
-import com.nfl.glitr.graphql.Glitr;
-import com.nfl.glitr.graphql.GlitrBuilder;
 import com.nfl.glitr.graphql.Mutation;
 import com.nfl.glitr.graphql.Root;
 import graphql.GraphQL;
@@ -51,7 +49,7 @@ public class TestTodo {
 
     @Test
     public void testMutationTodo() {
-        Map result = (Map) graphQL.execute("mutation { createTodo(input: { todo: { id:\"new-todo\" text:\"new text\" complete:true } }) { id text complete } }").getData();
+        Map result = (Map) graphQL.execute("mutation { createTodo(input: { id:\"new-todo\" text:\"new text\" complete:true }) { id text complete } }").getData();
         LinkedHashMap todo = (LinkedHashMap) result.get("createTodo");
         assertTrue(todo.get("id").equals("new-todo"));
         assertTrue(todo.get("text").equals("new text"));
