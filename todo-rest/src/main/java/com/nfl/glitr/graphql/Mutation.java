@@ -1,12 +1,12 @@
 package com.nfl.glitr.graphql;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nfl.glitr.annotation.GlitrArgument;
+import com.nfl.glitr.annotation.GlitrDescription;
 import com.nfl.glitr.domain.Todo;
 import com.nfl.glitr.domain.User;
 import com.nfl.glitr.graphql.input.CreateTodoInput;
 import com.nfl.glitr.graphql.input.CreateUserInput;
-import com.nfl.glitr.graphql.domain.graph.annotation.GlitrArgument;
-import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
-import com.nfl.glitr.util.JsonUtils;
 import com.nfl.glitr.graphql.payload.CreateTodoPayload;
 import com.nfl.glitr.graphql.payload.CreateUserPayload;
 import graphql.schema.DataFetchingEnvironment;
@@ -16,10 +16,12 @@ import java.util.Map;
 @GlitrDescription("Where to persist something.")
 public class Mutation {
 
+    private ObjectMapper objectMapper = new ObjectMapper();
+
     @GlitrArgument(name = "input", type = CreateUserInput.class, nullable = false)
     public CreateUserPayload getCreateUser(DataFetchingEnvironment env) {
         Map inputMap = env.getArgument("input");
-        CreateUserInput input = JsonUtils.convertValue(inputMap, CreateUserInput.class);
+        CreateUserInput input = objectMapper.convertValue(inputMap, CreateUserInput.class);
 
         User user = new User()
                 .setId(input.getUser().getId())
@@ -35,7 +37,7 @@ public class Mutation {
     @GlitrArgument(name = "input", type = CreateTodoInput.class, nullable = false)
     public CreateTodoPayload getCreateTodo(DataFetchingEnvironment env) {
         Map inputMap = env.getArgument("input");
-        CreateTodoInput input = JsonUtils.convertValue(inputMap, CreateTodoInput.class);
+        CreateTodoInput input = objectMapper.convertValue(inputMap, CreateTodoInput.class);
 
         Todo todo = new Todo()
                 .setId(input.getTodo().getId())

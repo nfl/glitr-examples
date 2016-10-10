@@ -1,6 +1,7 @@
 package com.nfl.glitr.graphql.input;
 
-import com.nfl.glitr.graphql.registry.mutation.RelayMutationType;
+
+import com.nfl.glitr.registry.mutation.RelayMutationType;
 
 public class CreateTodoInput extends RelayMutationType {
 

@@ -42,7 +42,7 @@ public class TestTodo {
 
     @Test
     public void testMutationUser() {
-        Map result = (Map) graphQL.execute("mutation { createUser(input: { user: { id:\"new-user\" } }) { id } }").getData();
+        Map result = (Map) graphQL.execute("mutation { createUser(input: { id:\"new-user\" }) { id } }").getData();
         LinkedHashMap user = (LinkedHashMap) result.get("createUser");
         assertTrue(user.get("id").equals("new-user"));
     }

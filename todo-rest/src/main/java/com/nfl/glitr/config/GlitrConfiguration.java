@@ -1,7 +1,7 @@
 package com.nfl.glitr.config;
 
-import com.nfl.glitr.graphql.Glitr;
-import com.nfl.glitr.graphql.GlitrBuilder;
+import com.nfl.glitr.Glitr;
+import com.nfl.glitr.GlitrBuilder;
 import com.nfl.glitr.graphql.Mutation;
 import com.nfl.glitr.graphql.Root;
 import graphql.GraphQL;

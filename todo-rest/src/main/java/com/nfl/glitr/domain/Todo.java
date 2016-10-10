@@ -1,6 +1,7 @@
 package com.nfl.glitr.domain;
 
-import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
+
+import com.nfl.glitr.annotation.GlitrDescription;
 
 @GlitrDescription("A Todo Object")
 public class Todo {

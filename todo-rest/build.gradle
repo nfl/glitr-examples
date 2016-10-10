@@ -19,7 +19,10 @@ repositories {
 }
 
 dependencies {
-    compile('com.nfl.glitr:glitr:1.1.0-RC')
+    compile('com.nfl.glitr:glitr:1.3.0-SNAPSHOT')
     compile('org.springframework.boot:spring-boot-starter-web:1.4.1.RELEASE')
+    // Jackson dependencies
+    compile("com.fasterxml.jackson.core:jackson-core:2.6.2")
+    compile("com.fasterxml.jackson.core:jackson-databind:2.6.2")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

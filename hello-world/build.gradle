@@ -9,6 +9,6 @@ repositories {
 }
 
 dependencies {
-    compile("com.nfl.glitr:glitr:1.1.0-RC")
+    compile("com.nfl.glitr:glitr:1.3.0-SNAPSHOT")
     testCompile('junit:junit:4.11')
 }

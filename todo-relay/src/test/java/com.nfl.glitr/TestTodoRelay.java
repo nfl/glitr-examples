@@ -1,7 +1,5 @@
 package com.nfl.glitr;
 
-import com.nfl.glitr.graphql.Glitr;
-import com.nfl.glitr.graphql.GlitrBuilder;
 import com.nfl.glitr.graphql.Mutation;
 import com.nfl.glitr.graphql.Root;
 import graphql.GraphQL;
@@ -11,6 +9,7 @@ import org.junit.Test;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import static com.nfl.glitr.TodoRelay.configureGlitrObjectMapper;
 import static org.junit.Assert.assertTrue;
 
 public class TestTodoRelay {
@@ -22,6 +21,7 @@ public class TestTodoRelay {
         Glitr glitr = GlitrBuilder.newGlitr()
                 .withQueryRoot(new Root())
                 .withMutationRoot(new Mutation())
+                .withObjectMapper(configureGlitrObjectMapper())
                 .build();
         graphQL = new GraphQL(glitr.getSchema());
     }

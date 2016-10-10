@@ -1,7 +1,7 @@
 package com.nfl.glitr.graphql.payload;
 
-import com.nfl.glitr.graphql.registry.mutation.RelayMutationType;
 import com.nfl.glitr.domain.User;
+import com.nfl.glitr.registry.mutation.RelayMutationType;
 
 public class CreateUserPayload extends RelayMutationType {
 

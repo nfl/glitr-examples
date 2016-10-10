@@ -1,52 +1,28 @@
 package com.nfl.glitr.graphql;
 
-import com.nfl.glitr.domain.Todo;
-import com.nfl.glitr.domain.User;
+import com.nfl.glitr.annotation.GlitrArgument;
+import com.nfl.glitr.annotation.GlitrDescription;
 import com.nfl.glitr.graphql.input.CreateTodoInput;
 import com.nfl.glitr.graphql.input.CreateUserInput;
-import com.nfl.glitr.graphql.domain.graph.annotation.GlitrArgument;
-import com.nfl.glitr.graphql.domain.graph.annotation.GlitrDescription;
-import com.nfl.glitr.util.JsonUtils;
+import com.nfl.glitr.graphql.mutation.CreateTodoMutation;
+import com.nfl.glitr.graphql.mutation.CreateUserMutation;
 import com.nfl.glitr.graphql.payload.CreateTodoPayload;
 import com.nfl.glitr.graphql.payload.CreateUserPayload;
+import com.nfl.glitr.registry.mutation.RelayMutationDataFetcher;
 import graphql.schema.DataFetchingEnvironment;
-
-import java.util.Map;
 
 @GlitrDescription("Where to persist something.")
 public class Mutation {
 
     @GlitrArgument(name = "input", type = CreateUserInput.class, nullable = false)
     public CreateUserPayload getCreateUser(DataFetchingEnvironment env) {
-        Map inputMap = env.getArgument("input");
-        CreateUserInput input = JsonUtils.convertValue(inputMap, CreateUserInput.class);
-
-        User user = new User()
-                .setId(input.getId())
-                .setTodoList(input.getTodoList());
-
-        CreateUserPayload payload = new CreateUserPayload();
-        payload.setClientMutationId(input.getClientMutationId());
-        payload.setUser(user);
-
-        return payload;
+        RelayMutationDataFetcher mutationDataFetcher = new RelayMutationDataFetcher(CreateUserInput.class, new CreateUserMutation());
+        return (CreateUserPayload) mutationDataFetcher.get(env);
     }
 
     @GlitrArgument(name = "input", type = CreateTodoInput.class, nullable = false)
     public CreateTodoPayload getCreateTodo(DataFetchingEnvironment env) {
-        Map inputMap = env.getArgument("input");
-        CreateTodoInput input = JsonUtils.convertValue(inputMap, CreateTodoInput.class);
-
-        Todo todo = new Todo()
-                .setId(input.getId())
-                .setText(input.getText())
-                .setComplete(input.isComplete())
-                .setUser(new User().setId(input.getUserId()));
-
-        CreateTodoPayload payload = new CreateTodoPayload();
-        payload.setClientMutationId(input.getClientMutationId());
-        payload.setTodo(todo);
-
-        return payload;
+        RelayMutationDataFetcher mutationDataFetcher = new RelayMutationDataFetcher(CreateTodoInput.class, new CreateTodoMutation());
+        return (CreateTodoPayload) mutationDataFetcher.get(env);
     }
 }
