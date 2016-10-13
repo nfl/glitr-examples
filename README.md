@@ -4,7 +4,7 @@
 
 ## Build
 
-Clone GLiTR and install it your local maven repository.
+Clone GLiTR and install it into your local maven repository.
 
 ```
 $ git clone git@github.com:NFL/glitr.git
