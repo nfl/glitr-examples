@@ -4,15 +4,7 @@
 
 ## Build
 
-Clone GLiTR and install it into your local maven repository.
-
-```
-$ git clone git@github.com:NFL/glitr.git
-$ cd glitr/
-$ ./gradlew install
-```
-
-Then build the examples.
+Build the examples.
 
 ```
 $ git clone git@github.com:NFL/glitr-examples.git
