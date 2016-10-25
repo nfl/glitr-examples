@@ -1,6 +1,6 @@
 # GLiTR Examples
 
-[![Build Status](https://travis-ci.com/nfl/glitr-examples.svg?token=Qo6bav9EZzhnpwg6Mz2z&branch=master)](https://travis-ci.com/nfl/glitr-examples)
+[![Build Status](https://travis-ci.org/nfl/glitr-examples.svg?branch=master)](https://travis-ci.org/nfl/glitr-examples)
 
 ## Build
 
